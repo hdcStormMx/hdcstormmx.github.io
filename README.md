@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+Change pass
+-----------
+1) -> sudo passwd "user"
+2) ->	sudo -i
+   ->	passwd
+   
+mkdir:
+------
+1) ->	mkdir /dir/newdir
+2) ->	mkdir -p /dir/dir/subd1/subd2/subd3
+3) ->	mkir -m 777 /dir/dir
 
-You can use the [editor on GitHub](https://github.com/hdcsm/hdcsm.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+scp ssh:
+--------
+1) -> scp -P 22222 user@serverip:/opt/wireguard-server/config/peer1/peer1.conf .  (copy server to local)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+ssh config:
+-----------
+-> ssh-keygen -t rsa -b 4096  (create key)
+-> ssh-copy-id -i ~/.ssh/id_rsa.pub user@serverip -p 22222	(copy local to server /home/user/.ssh/authorized_keys)
+-> (nano || vim) /etc/ssh/sshd_config
+-> edit config file:
+ - PermitRootLogin no
+ - PubkeyAuthentication yes
+ - PasswordAuthentication no
+ - PermitEmptyPasswords no
+ - ChallengeResponseAuthentication no
+ - UsePAM yes
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+new server:
+-----------
+-> sudo apt update
+-> sudo apt full-upgrade
+-> sudo reboot
 
-```markdown
-Syntax highlighted code block
+-> sudo apt-get install -y \
+     apt-transport-https \
+     ca-certificates \
+     curl \
+     gnupg2 \
+     software-properties-common \
+     vim \
+     fail2ban \
+     ntfs-3g
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hdcStormMx/hdcstormmx.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+-> docker: https://docs.docker.com/engine/install/ubuntu/
+-> portainer: https://docs.portainer.io/v/ce-2.9/start/install/server/docker/linux
