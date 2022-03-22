@@ -56,6 +56,17 @@ logpath = %(sshd_log)s
 backend = %(sshd_backend)s  
 maxretry = 3  
   
+[openvpn]  
+enabled  = true  
+port     = 1194  
+protocol = udp  
+filter   = openvpn  
+logpath  = /var/log/openvpn.log  
+maxretry = 3  
+  
+-> service fail2ban restart  
+
+  
 docker / portainer:
 -------------------
 -> docker: [https://docs.docker.com/engine/install/ubuntu](https://docs.docker.com/engine/install/ubuntu)  
