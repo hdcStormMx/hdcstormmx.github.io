@@ -49,3 +49,4 @@ maxretry = 3
 
 -> docker: [https://docs.docker.com/engine/install/ubuntu](https://docs.docker.com/engine/install/ubuntu)  
 -> portainer: [https://docs.portainer.io/v/ce-2.9/start/install/server/docker/linux](https://docs.portainer.io/v/ce-2.9/start/install/server/docker/linux)  
+-> [update-portainer](https://docs.portainer.io/v/ce-2.11/start/upgrade)  
