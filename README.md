@@ -39,13 +39,13 @@ new server:
 
 fail2ban:
 ---------
-[sshd]
-bantime = 86400
-port    = 22222
-logpath = %(sshd_log)s
-backend = %(sshd_backend)s
-maxretry = 3
-
+[sshd]  
+bantime = 86400  
+port    = 22222  
+logpath = %(sshd_log)s  
+backend = %(sshd_backend)s  
+maxretry = 3  
+  
 
 -> docker: [https://docs.docker.com/engine/install/ubuntu](https://docs.docker.com/engine/install/ubuntu)  
 -> portainer: [https://docs.portainer.io/v/ce-2.9/start/install/server/docker/linux](https://docs.portainer.io/v/ce-2.9/start/install/server/docker/linux)  
