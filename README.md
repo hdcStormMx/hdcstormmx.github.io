@@ -72,3 +72,33 @@ docker / portainer:
 -> docker: [https://docs.docker.com/engine/install/ubuntu](https://docs.docker.com/engine/install/ubuntu)  
 -> portainer: [https://docs.portainer.io/v/ce-2.9/start/install/server/docker/linux](https://docs.portainer.io/v/ce-2.9/start/install/server/docker/linux)  
 -> [update-portainer](https://docs.portainer.io/v/ce-2.11/start/upgrade)  
+  
+WireGuard:
+----------
+version: "2.1"  
+services:  
+  wireguard:  
+    image: linuxserver/wireguard  
+    container_name: wireguard  
+    cap_add:  
+      - NET_ADMIN  
+      - SYS_MODULE  
+    environment:  
+      - PUID=1000  
+      - PGID=1000  
+      - TZ=Europe/London  
+      - SERVERURL=???.duckdns.org #optional  
+      - SERVERPORT=51820 #optional  
+      - PEERS=1 #optional  
+      - PEERDNS=auto #optional  
+      - INTERNAL_SUBNET=10.13.13.0 #optional  
+    volumes:  
+      - /opt/wireguard-server/config:/config  
+      - /lib/modules:/lib/modules  
+    ports:  
+      - 51820:51820/udp  
+    sysctls:  
+      - net.ipv4.conf.all.src_valid_mark=1  
+    restart: always  
+
+
