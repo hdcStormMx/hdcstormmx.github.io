@@ -9,7 +9,17 @@ mkdir:
 ->	mkdir /dir/newdir  
 ->	mkdir -p /dir/dir/subd1/subd2/subd3  
 ->	mkir -m 777 /dir/dir  
-
+  
+rm / rmdir:
+-----------
+-> rm filename  
+-> rm filename1 filename2 filename3  
+-> rm *.pdf  
+-> -i (confirm)  
+-> -f (force)  
+-> rm -d / rmdir (empty directory)  
+-> rm -r dirname (recursive)  
+  
 scp ssh:
 --------
 -> scp -P 22222 user@serverip:/opt/wireguard-server/config/peer1/peer1.conf .  (copy server to local)  
