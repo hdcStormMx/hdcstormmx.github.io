@@ -45,24 +45,26 @@ new server:
 -> sudo apt full-upgrade  
 -> sudo reboot  
 
--> sudo apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common vim fail2ban ntfs-3g
+-> `sudo apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common vim fail2ban ntfs-3g`
 
 fail2ban:
 ---------
-[sshd]  
+```[sshd]  
 bantime = 86400  
 port    = 22222  
 logpath = %(sshd_log)s  
 backend = %(sshd_backend)s  
 maxretry = 3  
+```
   
-[openvpn]  
+```[openvpn]  
 enabled  = true  
 port     = 1194  
 protocol = udp  
 filter   = openvpn  
 logpath  = /var/log/openvpn.log  
 maxretry = 3  
+```
   
 -> service fail2ban restart  
 
@@ -75,7 +77,7 @@ docker / portainer:
   
 WireGuard:
 ----------
-version: "2.1"  
+```version: "2.1"  
 services:  
   wireguard:  
     image: linuxserver/wireguard  
@@ -100,5 +102,6 @@ services:
     sysctls:  
       - net.ipv4.conf.all.src_valid_mark=1  
     restart: always  
+```
 
 
