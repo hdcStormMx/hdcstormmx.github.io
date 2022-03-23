@@ -77,7 +77,8 @@ docker / portainer:
   
 WireGuard:
 ----------
-```version: "2.1"  
+```
+version: "2.1"  
 services:  
   wireguard:  
     image: linuxserver/wireguard  
