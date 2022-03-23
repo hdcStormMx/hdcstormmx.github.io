@@ -22,7 +22,11 @@ rm / rmdir:
   
 scp ssh:
 --------
--> scp -P 22222 user@serverip:/opt/wireguard-server/config/peer1/peer1.conf .  (copy server to local)  
+Copy server to local  
+```
+scp -P 22222 user@serverip:/opt/wireguard-server/config/peer1/peer1.conf .
+scp -P 22222 user@serverip:/opt/wireguard-server/config/peer1/peer1.png .
+```
 
 ssh config:
 -----------
