@@ -108,5 +108,6 @@ services:
       - net.ipv4.conf.all.src_valid_mark=1  
     restart: always  
 ```
-
+`nano /opt/wireguard-server/config/wg0.conf`  
+`ListenPort = 51820`  
 
